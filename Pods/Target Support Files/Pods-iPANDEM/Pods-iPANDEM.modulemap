@@ -1,0 +1,6 @@
+framework module Pods_iPANDEM {
+  umbrella header "Pods-iPANDEM-umbrella.h"
+
+  export *
+  module * { export * }
+}

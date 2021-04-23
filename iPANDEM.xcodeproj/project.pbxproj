@@ -1,0 +1,425 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		222780C925FBCD0B00D2CAAF /* Side_MenuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222780C825FBCD0B00D2CAAF /* Side_MenuApp.swift */; };
+		222780CB25FBCD0B00D2CAAF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222780CA25FBCD0B00D2CAAF /* ContentView.swift */; };
+		222780CD25FBCD0D00D2CAAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 222780CC25FBCD0D00D2CAAF /* Assets.xcassets */; };
+		222780D025FBCD0D00D2CAAF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 222780CF25FBCD0D00D2CAAF /* Preview Assets.xcassets */; };
+		222780DE25FBCE2600D2CAAF /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222780DD25FBCE2600D2CAAF /* MenuView.swift */; };
+		223F2CA626309D5F00D328B0 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223F2CA526309D5F00D328B0 /* HelpView.swift */; };
+		22608B7E260E43A7007F7D5C /* PreTestInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22608B7D260E43A7007F7D5C /* PreTestInformationView.swift */; };
+		22980ED325FFCDB4000FBCC4 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22980ED225FFCDB4000FBCC4 /* ResultsView.swift */; };
+		22F10D042602726E0081DD18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22F10D032602726E0081DD18 /* GoogleService-Info.plist */; };
+		27068E309FE0AD477D4FE85A /* Pods_iPANDEM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B4D7B80BEF843469CE6230 /* Pods_iPANDEM.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		107E9BD1C0D75F857031500A /* Pods-iPANDEM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPANDEM.debug.xcconfig"; path = "Target Support Files/Pods-iPANDEM/Pods-iPANDEM.debug.xcconfig"; sourceTree = "<group>"; };
+		222780C525FBCD0B00D2CAAF /* iPANDEM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPANDEM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		222780C825FBCD0B00D2CAAF /* Side_MenuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side_MenuApp.swift; sourceTree = "<group>"; };
+		222780CA25FBCD0B00D2CAAF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		222780CC25FBCD0D00D2CAAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		222780CF25FBCD0D00D2CAAF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		222780D125FBCD0D00D2CAAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		222780DD25FBCE2600D2CAAF /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		223F2CA526309D5F00D328B0 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
+		22608B7D260E43A7007F7D5C /* PreTestInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreTestInformationView.swift; sourceTree = "<group>"; };
+		22980ED225FFCDB4000FBCC4 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		22F10D032602726E0081DD18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		90B4D7B80BEF843469CE6230 /* Pods_iPANDEM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPANDEM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0ADDFC58B7329F9D3D38C6B /* Pods-iPANDEM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPANDEM.release.xcconfig"; path = "Target Support Files/Pods-iPANDEM/Pods-iPANDEM.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		222780C225FBCD0B00D2CAAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27068E309FE0AD477D4FE85A /* Pods_iPANDEM.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		222780BC25FBCD0B00D2CAAF = {
+			isa = PBXGroup;
+			children = (
+				222780C725FBCD0B00D2CAAF /* iPANDEM */,
+				222780C625FBCD0B00D2CAAF /* Products */,
+				F123AE993B922AAFBC62E607 /* Pods */,
+				A0435015EEC023A7BE31C0DF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		222780C625FBCD0B00D2CAAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				222780C525FBCD0B00D2CAAF /* iPANDEM.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		222780C725FBCD0B00D2CAAF /* iPANDEM */ = {
+			isa = PBXGroup;
+			children = (
+				222780C825FBCD0B00D2CAAF /* Side_MenuApp.swift */,
+				223F2CA526309D5F00D328B0 /* HelpView.swift */,
+				22608B7D260E43A7007F7D5C /* PreTestInformationView.swift */,
+				22980ED225FFCDB4000FBCC4 /* ResultsView.swift */,
+				222780CA25FBCD0B00D2CAAF /* ContentView.swift */,
+				222780DD25FBCE2600D2CAAF /* MenuView.swift */,
+				222780CC25FBCD0D00D2CAAF /* Assets.xcassets */,
+				222780D125FBCD0D00D2CAAF /* Info.plist */,
+				22F10D032602726E0081DD18 /* GoogleService-Info.plist */,
+				222780CE25FBCD0D00D2CAAF /* Preview Content */,
+			);
+			path = iPANDEM;
+			sourceTree = "<group>";
+		};
+		222780CE25FBCD0D00D2CAAF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				222780CF25FBCD0D00D2CAAF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A0435015EEC023A7BE31C0DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90B4D7B80BEF843469CE6230 /* Pods_iPANDEM.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F123AE993B922AAFBC62E607 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				107E9BD1C0D75F857031500A /* Pods-iPANDEM.debug.xcconfig */,
+				D0ADDFC58B7329F9D3D38C6B /* Pods-iPANDEM.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		222780C425FBCD0B00D2CAAF /* iPANDEM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 222780D425FBCD0D00D2CAAF /* Build configuration list for PBXNativeTarget "iPANDEM" */;
+			buildPhases = (
+				A007AE1852553584EF85299E /* [CP] Check Pods Manifest.lock */,
+				222780C125FBCD0B00D2CAAF /* Sources */,
+				222780C225FBCD0B00D2CAAF /* Frameworks */,
+				222780C325FBCD0B00D2CAAF /* Resources */,
+				23ADCF5C0BACC26D02965FB7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPANDEM;
+			productName = "Side Menu";
+			productReference = 222780C525FBCD0B00D2CAAF /* iPANDEM.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		222780BD25FBCD0B00D2CAAF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					222780C425FBCD0B00D2CAAF = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 222780C025FBCD0B00D2CAAF /* Build configuration list for PBXProject "iPANDEM" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 222780BC25FBCD0B00D2CAAF;
+			productRefGroup = 222780C625FBCD0B00D2CAAF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				222780C425FBCD0B00D2CAAF /* iPANDEM */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		222780C325FBCD0B00D2CAAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				222780D025FBCD0D00D2CAAF /* Preview Assets.xcassets in Resources */,
+				222780CD25FBCD0D00D2CAAF /* Assets.xcassets in Resources */,
+				22F10D042602726E0081DD18 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23ADCF5C0BACC26D02965FB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iPANDEM/Pods-iPANDEM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iPANDEM/Pods-iPANDEM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iPANDEM/Pods-iPANDEM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A007AE1852553584EF85299E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iPANDEM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		222780C125FBCD0B00D2CAAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				222780CB25FBCD0B00D2CAAF /* ContentView.swift in Sources */,
+				223F2CA626309D5F00D328B0 /* HelpView.swift in Sources */,
+				22980ED325FFCDB4000FBCC4 /* ResultsView.swift in Sources */,
+				222780DE25FBCE2600D2CAAF /* MenuView.swift in Sources */,
+				222780C925FBCD0B00D2CAAF /* Side_MenuApp.swift in Sources */,
+				22608B7E260E43A7007F7D5C /* PreTestInformationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		222780D225FBCD0D00D2CAAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		222780D325FBCD0D00D2CAAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		222780D525FBCD0D00D2CAAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 107E9BD1C0D75F857031500A /* Pods-iPANDEM.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"iPANDEM/Preview Content\"";
+				DEVELOPMENT_TEAM = UYX28N8Q7N;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iPANDEM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.8.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PandemCorp.iPANDEM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		222780D625FBCD0D00D2CAAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0ADDFC58B7329F9D3D38C6B /* Pods-iPANDEM.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"iPANDEM/Preview Content\"";
+				DEVELOPMENT_TEAM = UYX28N8Q7N;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iPANDEM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.8.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PandemCorp.iPANDEM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		222780C025FBCD0B00D2CAAF /* Build configuration list for PBXProject "iPANDEM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				222780D225FBCD0D00D2CAAF /* Debug */,
+				222780D325FBCD0D00D2CAAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		222780D425FBCD0D00D2CAAF /* Build configuration list for PBXNativeTarget "iPANDEM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				222780D525FBCD0D00D2CAAF /* Debug */,
+				222780D625FBCD0D00D2CAAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 222780BD25FBCD0B00D2CAAF /* Project object */;
+}
