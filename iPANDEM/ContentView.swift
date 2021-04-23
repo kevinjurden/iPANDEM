@@ -99,9 +99,9 @@ struct MainView: View {
                 Spacer()
                 Button(action: {
                     self.showPreTest = true
-                    self.menuSelection = "Pre-Test"
+                    self.menuSelection = "Consent Form"
                 }) {
-                    Text("Go to the Pre-Test page")
+                    Text("Go to the Consent Form")
                 }.padding(.bottom, 10)
                 Text("© Pandem Corp. All Rights Reserved")
                     .font(.system(size: 10))

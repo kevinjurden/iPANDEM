@@ -55,7 +55,7 @@ struct MenuView: View {
                 .padding(.top, 30)
             }
             Button(action: {
-                self.menuSelection = "Pre-Test"
+                self.menuSelection = "Consent Form"
                 self.showPreTest = true
                 self.showResults = false
                 self.showHelp = false
@@ -67,7 +67,7 @@ struct MenuView: View {
                     Image(systemName: "person")
                         .foregroundColor(.black)
                         .imageScale(.large)
-                    Text("Pre-Test")
+                    Text("Consent Form")
                         .foregroundColor(.black)
                         .font(.headline)
                 }

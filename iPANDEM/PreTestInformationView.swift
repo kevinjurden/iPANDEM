@@ -93,7 +93,7 @@ struct PreTestInformationView: View {
                         if country == "Select A Country" || state == "Select A State" || city == "" || streetAddress == "" || zipcode.value == "" {
                             cantContinue = true
                         } else {
-                            db.collection("covid_19").addDocument(data: ["name":(firstName + " " + lastName), "email":emailAddress,"phone":phoneNumber.value,"gender":gender,"race":race,"ethnicity":ethnicity,"birthdate":birthdate,"country":country,"state":state,"city":city,"address":streetAddress,"zip":zipcode.value])
+                            db.collection("consent").addDocument(data: ["name":(firstName + " " + lastName), "email":emailAddress,"phone":phoneNumber.value,"gender":gender,"race":race,"ethnicity":ethnicity,"birthdate":birthdate,"country":country,"state":state,"city":city,"address":streetAddress,"zip":zipcode.value])
                             self.showResults = true
                             self.showPreTest = false
                             self.showPreTestContinued = false
