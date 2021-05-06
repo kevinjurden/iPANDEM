@@ -33,42 +33,72 @@ struct ResultsView: View {
                     })
                     .padding(.trailing, 10)
                 }
-                GeometryReader { geometry in
-                    /*Circle()
-                        .stroke(Color.white, lineWidth: 3)
-                        .frame(width: 50, height: 50)
-                        .position(x: geometry.size.width*0.365, y: geometry.size.height*0.405)
-                    Circle()
-                        .stroke(Color.white, lineWidth: 3)
-                        .frame(width: 50, height: 50)
-                        .position(x: geometry.size.width*0.645, y: geometry.size.height*0.405)
-                    Circle()
-                        .stroke(Color.white, lineWidth: 3)
-                        .frame(width: 50, height: 50)
-                        .position(x: geometry.size.width*0.365, y: geometry.size.height*0.5)
-                    Circle()
-                        .stroke(Color.white, lineWidth: 3)
-                        .frame(width: 50, height: 50)
-                        .position(x: geometry.size.width*0.645, y: geometry.size.height*0.5)
-                    Circle()
-                        .stroke(Color.white, lineWidth: 3)
-                        .frame(width: 50, height: 50)
-                        .position(x: geometry.size.width*0.365, y: geometry.size.height*0.61)
-                    Circle()
-                        .stroke(Color.white, lineWidth: 3)
-                        .frame(width: 50, height: 50)
-                        .position(x: geometry.size.width*0.645, y: geometry.size.height*0.61)*/
-                    Path { path in
-                        path.move(to: CGPoint(x: (geometry.size.width/2)-25, y: geometry.size.height/2))
-                        path.addLine(to: CGPoint(x: (geometry.size.width/2)+25, y: (geometry.size.height)/2))
+                /*ZStack {
+                    GeometryReader { geometry in
+                        Path { path in
+                            path.move(to: CGPoint(x: (geometry.size.width/5*2)-25, y: geometry.size.height/5*1.5))
+                            path.addLine(to: CGPoint(x: (geometry.size.width/5*2)+25, y: (geometry.size.height)/5*1.5))
+                        }
+                        .stroke(Color.white, lineWidth: 2)
+                        Path { path in
+                            path.move(to: CGPoint(x: (geometry.size.width/5*2), y: (geometry.size.height/5*1.5)-25))
+                            path.addLine(to: CGPoint(x: (geometry.size.width/5*2), y: (geometry.size.height/5*1.5)+25))
+                        }
+                        .stroke(Color.white, lineWidth: 2)
+                        Path { path in
+                            path.move(to: CGPoint(x: (geometry.size.width/5*2)-25, y: geometry.size.height/5*2.25))
+                            path.addLine(to: CGPoint(x: (geometry.size.width/5*2)+25, y: (geometry.size.height)/5*2.25))
+                        }
+                        .stroke(Color.white, lineWidth: 2)
+                        Path { path in
+                            path.move(to: CGPoint(x: (geometry.size.width/5*2), y: (geometry.size.height/5*2.25)-25))
+                            path.addLine(to: CGPoint(x: (geometry.size.width/5*2), y: (geometry.size.height/5*2.25)+25))
+                        }
+                        .stroke(Color.white, lineWidth: 2)
+                        Path { path in
+                            path.move(to: CGPoint(x: (geometry.size.width/5*2)-25, y: geometry.size.height/5*3))
+                            path.addLine(to: CGPoint(x: (geometry.size.width/5*2)+25, y: (geometry.size.height)/5*3))
+                        }
+                        .stroke(Color.white, lineWidth: 2)
+                        Path { path in
+                            path.move(to: CGPoint(x: (geometry.size.width/5*2), y: (geometry.size.height/5*3)-25))
+                            path.addLine(to: CGPoint(x:     (geometry.size.width/5*2), y: (geometry.size.height/5*3)+25))
+                        }
+                        .stroke(Color.white, lineWidth: 2)
                     }
-                    .stroke(Color.white, lineWidth: 2)
-                    Path { path in
-                        path.move(to: CGPoint(x: (geometry.size.width/2), y: (geometry.size.height/2)-25))
-                        path.addLine(to: CGPoint(x: (geometry.size.width/2), y: (geometry.size.height/2)+25))
+                    GeometryReader { geometry in
+                        Path { path in
+                            path.move(to: CGPoint(x: (geometry.size.width/5*3)-25, y: geometry.size.height/5*1.5))
+                            path.addLine(to: CGPoint(x: (geometry.size.width/5*3)+25, y: (geometry.size.height)/5*1.5))
+                        }
+                        .stroke(Color.white, lineWidth: 2)
+                        Path { path in
+                            path.move(to: CGPoint(x: (geometry.size.width/5*3), y: (geometry.size.height/5*1.5)-25))
+                            path.addLine(to: CGPoint(x: (geometry.size.width/5*3), y: (geometry.size.height/5*1.5)+25))
+                        }
+                        .stroke(Color.white, lineWidth: 2)
+                        Path { path in
+                            path.move(to: CGPoint(x: (geometry.size.width/5*3)-25, y: geometry.size.height/5*2.25))
+                            path.addLine(to: CGPoint(x: (geometry.size.width/5*3)+25, y: (geometry.size.height)/5*2.25))
+                        }
+                        .stroke(Color.white, lineWidth: 2)
+                        Path { path in
+                            path.move(to: CGPoint(x: (geometry.size.width/5*3), y: (geometry.size.height/5*2.25)-25))
+                            path.addLine(to: CGPoint(x: (geometry.size.width/5*3), y: (geometry.size.height/5*2.25)+25))
+                        }
+                        .stroke(Color.white, lineWidth: 2)
+                        Path { path in
+                            path.move(to: CGPoint(x: (geometry.size.width/5*3)-25, y: geometry.size.height/5*3))
+                            path.addLine(to: CGPoint(x: (geometry.size.width/5*3)+25, y: (geometry.size.height)/5*3))
+                        }
+                        .stroke(Color.white, lineWidth: 2)
+                        Path { path in
+                            path.move(to: CGPoint(x: (geometry.size.width/5*3), y: (geometry.size.height/5*3)-25))
+                            path.addLine(to: CGPoint(x: (geometry.size.width/5*3), y: (geometry.size.height/5*3)+25))
+                        }
+                        .stroke(Color.white, lineWidth: 2)
                     }
-                    .stroke(Color.white, lineWidth: 2)
-                }
+                }*/
                 Spacer()
                 Text("\(camera.resultsText)")
                     .fontWeight(.semibold)
@@ -209,13 +239,12 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
                 let b = byteBuffer[index]
                 let g = byteBuffer[index+1]
                 let r = byteBuffer[index+2]
-                //let a = byteBuffer[index+3]
                 
-                if j == Int(height/2) && i == Int(width/2) {
-                    /*DispatchQueue.main.sync {
-                        self.resultsText = "\(byteBuffer[index+2]), \(byteBuffer[index+1]), \(byteBuffer[index])"
-                    }*/
-                    if r >= UInt8(110) && g >= UInt8(160) && b >= 20 && b <= UInt8(100) { //Yellow
+                if j == 200 && i == 200 {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.resultsText = "\(r) \(g) \(b)"
+                    }
+                    /*if r >= UInt8(110) && g >= UInt8(160) && b >= 20 && b <= UInt8(100) { //Yellow
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             self.resultsText = "You have COVID-19!"
                         }
@@ -227,14 +256,10 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             self.resultsText = "Test not found"
                         }
-                    }
+                    }*/
                     byteBuffer[index] = UInt8(0)
                     byteBuffer[index+1] = UInt8(0)
-                    byteBuffer[index+2] = UInt8(0)
-                } else {
-                    byteBuffer[index] = b
-                    byteBuffer[index+1] = g
-                    byteBuffer[index+2] = r
+                    byteBuffer[index+2] = UInt8(255)
                 }
             }
         }
