@@ -171,7 +171,7 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
     
     func setUp() {
         do {
-            self.session.sessionPreset = AVCaptureSession.Preset.hd1280x720
+            self.session.sessionPreset = AVCaptureSession.Preset.cif352x288
             self.session.beginConfiguration()
             
             let device = getDevice()
@@ -240,7 +240,7 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
                 let g = byteBuffer[index+1]
                 let r = byteBuffer[index+2]
                 
-                if j == 200 && i == 200 {
+                if j == height/2 && i == width/2 {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         self.resultsText = "\(r) \(g) \(b)"
                     }
