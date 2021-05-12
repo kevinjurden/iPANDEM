@@ -7,6 +7,9 @@
 
 import SwiftUI
 import AVFoundation
+//import GPUImage
+
+
 
 struct ResultsView: View {
     @Binding var showResults: Bool
@@ -33,7 +36,7 @@ struct ResultsView: View {
                     })
                     .padding(.trailing, 10)
                 }
-                /*ZStack {
+                ZStack {
                     GeometryReader { geometry in
                         Path { path in
                             path.move(to: CGPoint(x: (geometry.size.width/5*2)-25, y: geometry.size.height/5*1.5))
@@ -98,7 +101,7 @@ struct ResultsView: View {
                         }
                         .stroke(Color.white, lineWidth: 2)
                     }
-                }*/
+                }
                 Spacer()
                 Text("\(camera.resultsText)")
                     .fontWeight(.semibold)
@@ -232,34 +235,88 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
         let baseAddress = CVPixelBufferGetBaseAddress(imageBuffer)!
         let byteBuffer = baseAddress.assumingMemoryBound(to: UInt8.self)
         
-        for j in 0..<height {
-            for i in 0..<width {
-                let index = (j * width + i) * 4
-                
-                let b = byteBuffer[index]
-                let g = byteBuffer[index+1]
-                let r = byteBuffer[index+2]
-                
-                if j == height/2 && i == width/2 {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        self.resultsText = "\(r) \(g) \(b)"
+        struct Screen{
+            var Sheight: Double!
+            var Swidth: Double!
+        }
+        struct ScreenInt{
+            var Sheight: Int!
+            var Swidth: Int!
+        }
+        
+        //iphone 11 values
+        let iphone11 = Screen(Sheight: 848, Swidth: 414)
+        
+        //coordinates
+        let perccoord1 = Screen(Sheight: 0.4, Swidth: 0.4)
+        let perccoord2 = Screen(Sheight: 0.5, Swidth: 0.4)
+        let perccoord3 = Screen(Sheight: 0.6, Swidth: 0.4)
+        let perccoord4 = Screen(Sheight: 0.4, Swidth: 0.6)
+        let perccoord5 = Screen(Sheight: 0.5, Swidth: 0.6)
+        let perccoord6 = Screen(Sheight: 0.6, Swidth: 0.6)
+        //Screen & itself
+        let Camera = Screen(Sheight: Double(height), Swidth: Double(width))
+        //values desired to be place into array
+        let LUT1 = coordreturn(Displayin: iphone11, Camerain: Camera, Percentin: perccoord1)
+        let LUT2 = coordreturn(Displayin: iphone11, Camerain: Camera, Percentin: perccoord2)
+        let LUT3 = coordreturn(Displayin: iphone11, Camerain: Camera, Percentin: perccoord3)
+        let LUT4 = coordreturn(Displayin: iphone11, Camerain: Camera, Percentin: perccoord4)
+        let LUT5 = coordreturn(Displayin: iphone11, Camerain: Camera, Percentin: perccoord5)
+        let LUT6 = coordreturn(Displayin: iphone11, Camerain: Camera, Percentin: perccoord6)
+        
+        //coord values
+        func coordreturn(Displayin: Screen, Camerain: Screen, Percentin: Screen) -> ScreenInt {
+            //Author: Hector Figueroa
+            //Input: Displayin, Camerain, Percentin
+            //Output: LUTin
+            //Date: 05/07/2021
+            //Known Issues: screen must be as tall or taller than camera, not wider
+            
+            //values for ratio correction
+            let ratiocamera = (Displayin.Swidth/Displayin.Sheight)
+            let xoffset = (Camerain.Swidth - (Camerain.Sheight*ratiocamera))/2
+            
+            //LUT values
+            let LUTWidth = Int(((Camerain.Swidth - (2*xoffset))*Percentin.Swidth)+xoffset)
+            let LUTHeight = Int(Camerain.Sheight * Percentin.Sheight)
+            
+            let returnvalue = ScreenInt(Sheight: LUTHeight, Swidth: LUTWidth)
+            
+            return returnvalue
+        }
+        
+        let LUTnum : [ScreenInt] = [LUT1, LUT2, LUT3, LUT4, LUT5, LUT6]
+        
+        for LUTint in 0..<5 {
+            for j in 0..<height {
+                for i in 0..<width {
+                    let index = (j * width + i) * 4
+                    
+                    let b = byteBuffer[index]
+                    let g = byteBuffer[index+1]
+                    let r = byteBuffer[index+2]
+                    
+                    if j == LUTnum[LUTint].Sheight && i == LUTnum[LUTint].Swidth {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            self.resultsText = "\(r) \(g) \(b)"
+                        }
+                        if r >= UInt8(110) && g >= UInt8(160) && b >= 20 && b <= UInt8(100) { //Yellow
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                self.resultsText = "You have COVID-19!"
+                            }
+                        } else if r >= UInt8(160) && g <= UInt8(80) && b <= UInt8(60) { //Red
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                self.resultsText = "You do not have COVID-19!"
+                            }
+                        } else { //Can't find solution
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                self.resultsText = "Test not found"
+                            }
+                        }
+                        byteBuffer[index] = UInt8(0)
+                        byteBuffer[index+1] = UInt8(0)
+                        byteBuffer[index+2] = UInt8(255)
                     }
-                    /*if r >= UInt8(110) && g >= UInt8(160) && b >= 20 && b <= UInt8(100) { //Yellow
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            self.resultsText = "You have COVID-19!"
-                        }
-                    } else if r >= UInt8(160) && g <= UInt8(80) && b <= UInt8(60) { //Red
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            self.resultsText = "You do not have COVID-19!"
-                        }
-                    } else { //Can't find solution
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            self.resultsText = "Test not found"
-                        }
-                    }*/
-                    byteBuffer[index] = UInt8(0)
-                    byteBuffer[index+1] = UInt8(0)
-                    byteBuffer[index+2] = UInt8(255)
                 }
             }
         }
@@ -289,4 +346,6 @@ struct CameraPreview: UIViewRepresentable {
         
     }
 }
+
+
 
