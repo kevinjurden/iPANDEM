@@ -263,12 +263,12 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
         let iphone11 = Screen(Sheight: 852, Swidth: 414)
         
         //coordinates
-        let perccoord1 = Screen(Sheight: 0.3191, Swidth: 0.39535)
-        let perccoord2 = Screen(Sheight: 0.4255, Swidth: 0.39535)
-        let perccoord3 = Screen(Sheight: 0.5319, Swidth: 0.39535)
-        let perccoord4 = Screen(Sheight: 0.3191, Swidth: 0.60465)
-        let perccoord5 = Screen(Sheight: 0.4255, Swidth: 0.60465)
-        let perccoord6 = Screen(Sheight: 0.5319, Swidth: 0.60465)
+        let perccoord1 = Screen(Sheight: 0.3191, Swidth: 0.60465)
+        let perccoord2 = Screen(Sheight: 0.4255, Swidth: 0.60465)
+        let perccoord3 = Screen(Sheight: 0.5319, Swidth: 0.60465)
+        let perccoord4 = Screen(Sheight: 0.3191, Swidth: 0.39535)
+        let perccoord5 = Screen(Sheight: 0.4255, Swidth: 0.39535)
+        let perccoord6 = Screen(Sheight: 0.5319, Swidth: 0.39535)
         //Screen & itself
         let Camera = Screen(Sheight: Double(height), Swidth: Double(width))
         //values desired to be place into array
@@ -289,10 +289,11 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
             
             //values for ratio correction
             let ratiocamera = (Displayin.Swidth/Displayin.Sheight)
-            let xoffset = (Camerain.Swidth - (Camerain.Sheight*ratiocamera))/2
+            let xoffset = (Camerain.Swidth - (Camerain.Sheight*ratiocamera))
             
             //LUT values
-            let LUTWidth = Int(((Camerain.Swidth - (2*xoffset))*Percentin.Swidth)+xoffset)
+            //let LUTWidth = Int(((Camerain.Swidth - (2*xoffset)) * Percentin.Swidth)) + Int(2*xoffset)
+            let LUTWidth = Int(((Camerain.Swidth) * Percentin.Swidth))
             let LUTHeight = Int(Camerain.Sheight * Percentin.Sheight)
             
             let returnvalue = ScreenInt(Sheight: LUTHeight, Swidth: LUTWidth)
@@ -311,7 +312,7 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
                     let g = byteBuffer[index+1]
                     let r = byteBuffer[index+2]
                     
-                    if j == LUTnum[LUTint].Sheight && i == LUTnum[LUTint].Swidth {
+                    if i == LUTnum[LUTint].Sheight && j == LUTnum[LUTint].Swidth {
                         /*DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             self.resultsText[LUTint] = "\(r) \(g) \(b) \(LUTint) \(LUTnum[LUTint].Sheight) \(LUTnum[LUTint].Swidth)"
                         }*/
