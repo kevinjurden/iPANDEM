@@ -103,7 +103,22 @@ struct ResultsView: View {
                     }
                 }
                 Spacer()
-                Text("\(camera.resultsText)")
+                Text("\(camera.resultsText[0])")
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                Text("\(camera.resultsText[1])")
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                Text("\(camera.resultsText[2])")
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                Text("\(camera.resultsText[3])")
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                Text("\(camera.resultsText[4])")
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                Text("\(camera.resultsText[5])")
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
             }
@@ -129,7 +144,7 @@ struct ResultsView_Previews: PreviewProvider {
 class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     @Published var isTaken = false
 
-    @Published var resultsText = ""
+    @Published var resultsText : [String] = ["num0", "num1", "num2", "num3", "num4", "num5"]
     
     @Published var session = AVCaptureSession()
     
@@ -245,15 +260,15 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
         }
         
         //iphone 11 values
-        let iphone11 = Screen(Sheight: 848, Swidth: 414)
+        let iphone11 = Screen(Sheight: 852, Swidth: 414)
         
         //coordinates
-        let perccoord1 = Screen(Sheight: 0.4, Swidth: 0.4)
-        let perccoord2 = Screen(Sheight: 0.5, Swidth: 0.4)
-        let perccoord3 = Screen(Sheight: 0.6, Swidth: 0.4)
-        let perccoord4 = Screen(Sheight: 0.4, Swidth: 0.6)
-        let perccoord5 = Screen(Sheight: 0.5, Swidth: 0.6)
-        let perccoord6 = Screen(Sheight: 0.6, Swidth: 0.6)
+        let perccoord1 = Screen(Sheight: 0.3191, Swidth: 0.39535)
+        let perccoord2 = Screen(Sheight: 0.4255, Swidth: 0.39535)
+        let perccoord3 = Screen(Sheight: 0.5319, Swidth: 0.39535)
+        let perccoord4 = Screen(Sheight: 0.3191, Swidth: 0.60465)
+        let perccoord5 = Screen(Sheight: 0.4255, Swidth: 0.60465)
+        let perccoord6 = Screen(Sheight: 0.5319, Swidth: 0.60465)
         //Screen & itself
         let Camera = Screen(Sheight: Double(height), Swidth: Double(width))
         //values desired to be place into array
@@ -287,7 +302,7 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
         
         let LUTnum : [ScreenInt] = [LUT1, LUT2, LUT3, LUT4, LUT5, LUT6]
         
-        for LUTint in 0..<5 {
+        for LUTint in 0..<6 {
             for j in 0..<height {
                 for i in 0..<width {
                     let index = (j * width + i) * 4
@@ -297,25 +312,25 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
                     let r = byteBuffer[index+2]
                     
                     if j == LUTnum[LUTint].Sheight && i == LUTnum[LUTint].Swidth {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            self.resultsText = "\(r) \(g) \(b)"
-                        }
+                        /*DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            self.resultsText[LUTint] = "\(r) \(g) \(b) \(LUTint) \(LUTnum[LUTint].Sheight) \(LUTnum[LUTint].Swidth)"
+                        }*/
                         if r >= UInt8(110) && g >= UInt8(160) && b >= 20 && b <= UInt8(100) { //Yellow
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                self.resultsText = "You have COVID-19!"
+                                self.resultsText[LUTint] = "You have COVID-19!"
                             }
                         } else if r >= UInt8(160) && g <= UInt8(80) && b <= UInt8(60) { //Red
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                self.resultsText = "You do not have COVID-19!"
+                                self.resultsText[LUTint] = "You do not have COVID-19!"
                             }
                         } else { //Can't find solution
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                self.resultsText = "Test not found"
+                                self.resultsText[LUTint] = "Test not found"
                             }
                         }
-                        byteBuffer[index] = UInt8(0)
-                        byteBuffer[index+1] = UInt8(0)
-                        byteBuffer[index+2] = UInt8(255)
+                        //byteBuffer[index] = UInt8(255)
+                        //byteBuffer[index+1] = UInt8(0)
+                        //byteBuffer[index+2] = UInt8(0)
                     }
                 }
             }
@@ -346,6 +361,4 @@ struct CameraPreview: UIViewRepresentable {
         
     }
 }
-
-
 
