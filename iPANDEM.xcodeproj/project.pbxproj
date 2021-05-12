@@ -19,6 +19,23 @@
 		27068E309FE0AD477D4FE85A /* Pods_iPANDEM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B4D7B80BEF843469CE6230 /* Pods_iPANDEM.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		47115B7D26446E9100F2D56D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47115B7726446E9000F2D56D /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		47115B7F26446E9100F2D56D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47115B7726446E9000F2D56D /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCE209E51943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		107E9BD1C0D75F857031500A /* Pods-iPANDEM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPANDEM.debug.xcconfig"; path = "Target Support Files/Pods-iPANDEM/Pods-iPANDEM.debug.xcconfig"; sourceTree = "<group>"; };
 		222780C525FBCD0B00D2CAAF /* iPANDEM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPANDEM.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,6 +49,7 @@
 		22608B7D260E43A7007F7D5C /* PreTestInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreTestInformationView.swift; sourceTree = "<group>"; };
 		22980ED225FFCDB4000FBCC4 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		22F10D032602726E0081DD18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		47115B7726446E9000F2D56D /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../GPUImage-master/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
 		90B4D7B80BEF843469CE6230 /* Pods_iPANDEM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPANDEM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0ADDFC58B7329F9D3D38C6B /* Pods-iPANDEM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPANDEM.release.xcconfig"; path = "Target Support Files/Pods-iPANDEM/Pods-iPANDEM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,6 +69,7 @@
 		222780BC25FBCD0B00D2CAAF = {
 			isa = PBXGroup;
 			children = (
+				47115B7726446E9000F2D56D /* GPUImage.xcodeproj */,
 				222780C725FBCD0B00D2CAAF /* iPANDEM */,
 				222780C625FBCD0B00D2CAAF /* Products */,
 				F123AE993B922AAFBC62E607 /* Pods */,
@@ -89,6 +108,15 @@
 				222780CF25FBCD0D00D2CAAF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		47115B7826446E9000F2D56D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47115B7E26446E9100F2D56D /* libGPUImage.a */,
+				47115B8026446E9100F2D56D /* GPUImage.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		A0435015EEC023A7BE31C0DF /* Frameworks */ = {
@@ -155,12 +183,35 @@
 			mainGroup = 222780BC25FBCD0B00D2CAAF;
 			productRefGroup = 222780C625FBCD0B00D2CAAF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 47115B7826446E9000F2D56D /* Products */;
+					ProjectRef = 47115B7726446E9000F2D56D /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				222780C425FBCD0B00D2CAAF /* iPANDEM */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		47115B7E26446E9100F2D56D /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = 47115B7D26446E9100F2D56D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		47115B8026446E9100F2D56D /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = 47115B7F26446E9100F2D56D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		222780C325FBCD0B00D2CAAF /* Resources */ = {
@@ -358,8 +409,27 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iPANDEM/Preview Content\"";
-				DEVELOPMENT_TEAM = UYX28N8Q7N;
+				DEVELOPMENT_TEAM = PZP4Z5GG7B;
 				ENABLE_PREVIEWS = YES;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuth\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreDiagnostics\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestoreSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/abseil\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"$(SRCR00T)\"/**",
+				);
 				INFOPLIST_FILE = iPANDEM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -367,7 +437,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.8.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.PandemCorp.iPANDEM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PandemCorp.iPANDEM1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -382,7 +452,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iPANDEM/Preview Content\"";
-				DEVELOPMENT_TEAM = UYX28N8Q7N;
+				DEVELOPMENT_TEAM = PZP4Z5GG7B;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iPANDEM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -391,7 +461,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.8.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.PandemCorp.iPANDEM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PandemCorp.iPANDEM1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
