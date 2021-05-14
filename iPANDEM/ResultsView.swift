@@ -259,15 +259,23 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
             var Swidth: Int!
         }
         
-        //iphone 11 values
-        let iphone11 = Screen(Sheight: 414, Swidth: 852)
+        //iphone Screen values
+        let screensize = UIScreen.main.bounds
+        let iphone11 = Screen(Sheight: Double(screensize.width), Swidth: Double(screensize.height))
         
-        let perccoord1 = Screen(Sheight: 0.5465, Swidth: 0.3191)
+        /*let perccoord1 = Screen(Sheight: 0.5465, Swidth: 0.3191)
         let perccoord2 = Screen(Sheight: 0.5465, Swidth: 0.4255)
         let perccoord3 = Screen(Sheight: 0.5465, Swidth: 0.5319)
         let perccoord4 = Screen(Sheight: 0.4535, Swidth: 0.3191)
         let perccoord5 = Screen(Sheight: 0.4535, Swidth: 0.4255)
-        let perccoord6 = Screen(Sheight: 0.4535, Swidth: 0.5319)
+        let perccoord6 = Screen(Sheight: 0.4535, Swidth: 0.5319)*/
+        
+        let perccoord1 = Screen(Sheight: 0.60456, Swidth: 0.3191)
+        let perccoord2 = Screen(Sheight: 0.60456, Swidth: 0.4255)
+        let perccoord3 = Screen(Sheight: 0.60456, Swidth: 0.5319)
+        let perccoord4 = Screen(Sheight: 0.39535, Swidth: 0.3191)
+        let perccoord5 = Screen(Sheight: 0.39535, Swidth: 0.4255)
+        let perccoord6 = Screen(Sheight: 0.39535, Swidth: 0.5319)
         
         //Screen & itself
         let Camera = Screen(Sheight: Double(height), Swidth: Double(width))
@@ -288,13 +296,14 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
             //Known Issues: screen must be as tall or taller than camera, not wider
             
             //values for ratio correction
-            let ratiocamera = (Displayin.Swidth/Displayin.Sheight)
-            let xoffset = (Camerain.Swidth - (Camerain.Sheight*ratiocamera))
+            let ratiocamera = (Displayin.Sheight/Displayin.Swidth)
+            let xoffset = (Camerain.Sheight - (Camerain.Swidth*ratiocamera))/2
             
             //LUT values
-            //let LUTWidth = Int(((Camerain.Swidth - (2*xoffset)) * Percentin.Swidth)) + Int(2*xoffset)
+            //let LUTWidth = Int(((Camerain.Swidth - (2*xoffset)) * Percentin.Swidth)) + Int(xoffset)
             let LUTWidth = Int(((Camerain.Swidth) * Percentin.Swidth))
-            let LUTHeight = Int(Camerain.Sheight * Percentin.Sheight)
+            //let LUTHeight = Int(Camerain.Sheight * Percentin.Sheight)
+            let LUTHeight = Int(((Camerain.Sheight - (2*xoffset)) * Percentin.Sheight)) + Int(xoffset)
             
             let returnvalue = ScreenInt(Sheight: LUTHeight, Swidth: LUTWidth)
             
@@ -326,8 +335,8 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
                                 self.resultsText[LUTint] = "Test not found"
                             }
                         }
-                        /*00DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            self.resultsText[LUTint] = "\(r) \(g) \(b)"
+                        /*DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            self.resultsText[LUTint] = "\(r) \(g) \(b) \(height) \(width) \(j) \(i)"
                         }*/
                         //byteBuffer[index] = UInt8(255)
                         //byteBuffer[index+1] = UInt8(0)
