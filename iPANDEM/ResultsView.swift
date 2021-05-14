@@ -244,8 +244,8 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
         
         CVPixelBufferLockBaseAddress(imageBuffer, CVPixelBufferLockFlags(rawValue: CVOptionFlags(0)))
         
-        let width = CVPixelBufferGetWidth(imageBuffer)
-        let height = CVPixelBufferGetHeight(imageBuffer)
+        let width = CVPixelBufferGetWidth(imageBuffer) //let width = CVPixelBufferGetWidth(imageBuffer)
+        let height = CVPixelBufferGetHeight(imageBuffer) //let height = CVPixelBufferGetHeight(imageBuffer)
         
         let baseAddress = CVPixelBufferGetBaseAddress(imageBuffer)!
         let byteBuffer = baseAddress.assumingMemoryBound(to: UInt8.self)
@@ -260,15 +260,15 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
         }
         
         //iphone 11 values
-        let iphone11 = Screen(Sheight: 852, Swidth: 414)
+        let iphone11 = Screen(Sheight: 414, Swidth: 852)
         
-        //coordinates
-        let perccoord1 = Screen(Sheight: 0.3191, Swidth: 0.60465)
-        let perccoord2 = Screen(Sheight: 0.4255, Swidth: 0.60465)
-        let perccoord3 = Screen(Sheight: 0.5319, Swidth: 0.60465)
-        let perccoord4 = Screen(Sheight: 0.3191, Swidth: 0.39535)
-        let perccoord5 = Screen(Sheight: 0.4255, Swidth: 0.39535)
-        let perccoord6 = Screen(Sheight: 0.5319, Swidth: 0.39535)
+        let perccoord1 = Screen(Sheight: 0.5465, Swidth: 0.3191)
+        let perccoord2 = Screen(Sheight: 0.5465, Swidth: 0.4255)
+        let perccoord3 = Screen(Sheight: 0.5465, Swidth: 0.5319)
+        let perccoord4 = Screen(Sheight: 0.4535, Swidth: 0.3191)
+        let perccoord5 = Screen(Sheight: 0.4535, Swidth: 0.4255)
+        let perccoord6 = Screen(Sheight: 0.4535, Swidth: 0.5319)
+        
         //Screen & itself
         let Camera = Screen(Sheight: Double(height), Swidth: Double(width))
         //values desired to be place into array
@@ -312,15 +312,12 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
                     let g = byteBuffer[index+1]
                     let r = byteBuffer[index+2]
                     
-                    if i == LUTnum[LUTint].Sheight && j == LUTnum[LUTint].Swidth {
-                        /*DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            self.resultsText[LUTint] = "\(r) \(g) \(b) \(LUTint) \(LUTnum[LUTint].Sheight) \(LUTnum[LUTint].Swidth)"
-                        }*/
-                        if r >= UInt8(110) && g >= UInt8(160) && b >= 20 && b <= UInt8(100) { //Yellow
+                    if j == LUTnum[LUTint].Sheight && i == LUTnum[LUTint].Swidth {
+                        if r >= UInt8(110) && g >= UInt8(160) && b >= UInt8(20) && b <= UInt8(190) { //Yellow
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                 self.resultsText[LUTint] = "You have COVID-19!"
                             }
-                        } else if r >= UInt8(160) && g <= UInt8(80) && b <= UInt8(60) { //Red
+                        } else if r >= UInt8(160) && g <= UInt8(50) && b <= UInt8(80) { //Red
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                 self.resultsText[LUTint] = "You do not have COVID-19!"
                             }
@@ -329,6 +326,9 @@ class CameraModel: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuf
                                 self.resultsText[LUTint] = "Test not found"
                             }
                         }
+                        /*00DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            self.resultsText[LUTint] = "\(r) \(g) \(b)"
+                        }*/
                         //byteBuffer[index] = UInt8(255)
                         //byteBuffer[index+1] = UInt8(0)
                         //byteBuffer[index+2] = UInt8(0)
